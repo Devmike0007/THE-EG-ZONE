@@ -1,0 +1,135 @@
+* {
+  padding: 0;
+  margin: 0; /*#a51717 */
+}
+body {
+  background-color: #f1e1a9;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  padding-top: 20px;
+}
+
+.header__logo {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo__img {
+  width: 20%;
+  border-radius: 50%;
+}
+
+.logo__title {
+  font-size: 20px;
+}
+
+.logo__highlight {
+  color: rgb(160, 31, 31);
+}
+
+.header__nav {
+  width: 500px;
+  background-color: white;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 50px;
+}
+
+.nav__list {
+  background-color: white;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  list-style: none;
+}
+
+.nav__link {
+  text-decoration: none;
+  color: black;
+}
+
+.nav__link:hover {
+  color: brown;
+}
+
+.header__cta{
+    width: 170px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid;
+    border-radius: 50px;
+    border-color: brown;
+    box-shadow: 0 0 3px brown;
+}
+
+.btn--primary{
+    text-decoration: none;
+    color: brown;
+    
+}
+
+.main{
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.section{
+    width: 70%;
+}
+
+.hero__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__text{
+    width: 50%;
+}
+.hero__title{
+    font-size: 65px;
+}
+.hero__description{
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+.hero__actions{
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 50px;
+    border: 1px solid;
+    border-radius: 50px;
+    background-color:#a51717;
+    border-color: #f1e1a9;
+}
+.btn--secondary{
+    text-decoration: none;
+    color: white;
+}
+.hero__image{
+    width: 50%;
+}
+
+.hero__image img{
+    width: 100%;
+}
