@@ -64,72 +64,87 @@ body {
   color: brown;
 }
 
-.header__cta{
-    width: 170px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid;
-    border-radius: 50px;
-    border-color: brown;
-    box-shadow: 0 0 3px brown;
+.header__cta {
+  width: 170px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid;
+  border-radius: 50px;
+  border-color: brown;
+  box-shadow: 0 0 3px brown;
 }
 
-.btn--primary{
-    text-decoration: none;
-    color: brown;
-    
+.btn--primary {
+  text-decoration: none;
+  color: brown;
 }
 
-.main{
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.main {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.section{
-    width: 70%;
+.section {
+  width: 70%;
 }
 
-.hero__container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 130px;
 }
 
-.hero__text{
-    width: 50%;
+.hero__text {
+  width: 60%;
 }
-.hero__title{
-    font-size: 65px;
+.hero__title {
+  font-size: 65px;
 }
-.hero__description{
-    margin-top: 30px;
-    font-size: 20px;
-}
-
-.hero__actions{
-    margin-top: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 30%;
-    height: 50px;
-    border: 1px solid;
-    border-radius: 50px;
-    background-color:#a51717;
-    border-color: #f1e1a9;
-}
-.btn--secondary{
-    text-decoration: none;
-    color: white;
-}
-.hero__image{
-    width: 50%;
+.hero__description {
+  margin-top: 30px;
+  font-size: 20px;
 }
 
-.hero__image img{
-    width: 100%;
+.hero__actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  height: 50px;
+  border: 1px solid;
+  border-radius: 50px;
+  background-color: #a51717;
+  border-color: #f1e1a9;
+}
+.btn--secondary {
+  text-decoration: none;
+  color: white;
+}
+.hero__image {
+  width: 40%;
+}
+
+.hero__image img {
+  width: 100%;
+  height: 600px;
+}
+.section--hero2{
+  margin-top: -30px;
+}
+
+.img-yaourt{
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.img-yaourt img {
+  width: 100%;
+  height: 500px;
 }
