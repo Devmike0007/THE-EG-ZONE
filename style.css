@@ -1,6 +1,7 @@
 * {
   padding: 0;
-  margin: 0; /*#a51717 */
+  margin: 0; 
+  font-family: 'Poppins', sans-serif;
 }
 body {
   background-color: #f1e1a9;
@@ -504,7 +505,7 @@ footer .div {
   }
 
   footer .div {
-    width: 80%;
+    width: 90%;
   }
   .footer-bottom {
     flex-direction: column;
