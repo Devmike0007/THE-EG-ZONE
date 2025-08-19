@@ -1,264 +1,234 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>THE EG ZONE — Menu</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Pacifico&display=swap" rel="stylesheet">
-    <style>
-        :root{
-            --yellow:#f6da00;
-            --red:#b31518;
-            --red-dark:#7e0f11;
-            --text:#130f0f;
-            --white:#fff;
-            --card:#ffe24f;
-            --radius:28px;
-        }
-        *{box-sizing:border-box}
-        html,body{height:100%}
-        body{
-            margin:0;
-            font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, "Helvetica Neue", Arial;
-            color:var(--text);
-            background:var(--yellow);
-            line-height:1.6;
-        }
-        .wrap{
-            max-width:1080px;
-            margin-inline:auto;
-            padding:24px;
-        }
-        .hero{
-            display:flex;
-            align-items:center;
-            gap:18px;
-            margin-bottom:14px;
-        }
-        .brandmark{
-            width:56px;height:56px;border-radius:50%;
-            background: radial-gradient(circle at 30% 30%, #000 35%, transparent 36%) center/0 0 no-repeat;
-            position:relative;
-            background-color:#000;
-            mask:
-                radial-gradient(circle 26px at 50% 50%, transparent 66%, #000 67%),
-                linear-gradient(#000,#000);
-            -webkit-mask:
-                radial-gradient(circle 26px at 50% 50%, transparent 66%, #000 67%),
-                linear-gradient(#000,#000);
-        }
-        .brandmark::after{
-            content:"";position:absolute;inset:8px; border:8px solid var(--yellow); border-right-color:transparent; border-bottom-left-radius:50%; border-top-left-radius:50%; border-bottom-right-radius:16px;
-            transform:rotate(0.0turn);
-        }
-        .titlebox h1{
-            font-weight:800;letter-spacing:.5px;margin:0;font-size:28px;
-        }
-        .image{
-            display: none;
-            height: 50px;
-            width: 50px;
-        }
-        .titlebox small{display:block;margin-top:4px;color:#3a2d01;font-weight:600}
-        .stripe{
-            display:grid;grid-template-columns:1.2fr .9fr;gap:28px;align-items:stretch;
-            background:
-                radial-gradient(1200px 400px at -20% 0%, var(--yellow) 40%, transparent 41%),
-                radial-gradient(1200px 400px at 120% 100%, var(--yellow) 40%, transparent 41%);
-            border-radius:var(--radius);
-            overflow:hidden;
-            box-shadow: 0 10px 30px rgba(0,0,0,.15);
-        }
-        .panel-left{
-            background:
-                radial-gradient(1200px 600px at -30% 10%, var(--red) 30%, var(--red-dark) 31%),
-                radial-gradient(800px 400px at 120% 120%, var(--red) 20%, var(--red-dark) 21%);
-            color:var(--white);
-            padding:40px 28px 28px 28px;
-            position:relative;
-        }
-        .panel-left .menu-heading{ font-family:"Pacifico", cursive; font-size:64px; line-height:1; margin:0 0 8px }
-        .list{
-            display:grid; gap:22px; margin-top:14px;
-        }
-        .item{ display:grid; gap:6px; }
-        .item .row{ display:flex; align-
-      padding:40px 28px 28px 28px;
-      position:relative;
-    }
-    .panel-left .menu-heading{ font-family:"Pacifico", cursive; font-size:64px; line-height:1; margin:0 0 8px }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
 
-    .list{
-      display:grid; gap:22px; margin-top:14px;
-    }
-    .item{ display:grid; gap:6px; }
-    .item .row{ display:flex; align-items:center; justify-content:space-between; gap:8px; }
-    .item .name{ font-weight:700; font-size:20px; letter-spacing:.3px; }
-    .dots{ flex:1; border-bottom:2px dotted rgba(255,255,255,.5); margin:0 8px }
-    .price{ font-weight:800 }
-    .desc{ color:#ffeccc; font-size:14.5px; }
-
-    /* RIGHT golden showcase */
-    .panel-right{
-      background:linear-gradient(180deg, #ffd400, #ffc933 48%, #ffbf00);
-      padding:28px; position:relative;
-      display:flex; flex-direction:column; justify-content:center; align-items:center; gap:24px;
-    }
-
-    .badge{
-      font-weight:800; text-transform:uppercase; background:rgba(0,0,0,.08); padding:10px 14px; border-radius:999px; font-size:14px; letter-spacing:.6px; color:#332400;
-    }
-
-    .chip{ position:absolute; inset:auto 24px 24px auto; display:flex; align-items:center; gap:8px; font-size:13px; background:#000; color:#fff; padding:10px 14px; border-radius:999px; box-shadow:0 8px 18px rgba(0,0,0,.25) }
-    .chip svg{ width:16px; height:16px }
-
-    /* product spots */
-    .spot{ width:min(320px, 90%); aspect-ratio:1/1; border-radius:50%; background:radial-gradient(circle at 35% 30%, rgba(255,255,255,.9), rgba(255,255,255,.65) 35%, rgba(255,255,255,0) 60%), rgba(0,0,0,.08); box-shadow: inset 0 0 0 10px rgba(255,255,255,.25), 0 24px 40px rgba(0,0,0,.2); display:grid; place-items:center; overflow:hidden }
-    /* placeholders: drop in your PNGs by replacing <img> src attributes */
-    .spot img{ width:82%; height:auto; display:block; filter: drop-shadow(0 20px 14px rgba(0,0,0,.25)); }
-
-    footer{
-      display:flex; align-items:center; justify-content:space-between; gap:12px; margin-top:16px; color:#3a2d01; font-size:14px;
-    }
-
-    /* ====== Responsive ====== */
-    @media (max-width: 900px){
-      .stripe{ grid-template-columns:1fr; }
-      .panel-right{ min-height:420px }
-      .panel-left{ padding:32px 20px }
-      .panel-left .menu-heading{ font-size:56px }
-      footer{ flex-direction:column; align-items:flex-start; gap:6px }
-    }
-  </style>
-  <style>
-    /* === additions === */
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-    .nav{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{appearance:none;border:0;background:#000;color:#fff;padding:10px 14px;border-radius:999px;font-weight:700;cursor:pointer;box-shadow:0 6px 12px rgba(0,0,0,.2)}
-    .btn.outline{background:transparent;color:#000;border:2px solid #000}
-    .btn.small{padding:6px 10px;font-size:14px}
-
-    /* dark mode */
-    [data-theme="dark"]{--yellow:#17140a;--card:#2a2614;--text:#f4f1e8}
-    [data-theme="dark"] body{background:var(--yellow)}
-    [data-theme="dark"] .chip{background:#fff;color:#000}
-    [data-theme="dark"] .panel-right{background:linear-gradient(180deg,#2b2506,#3b3207)}
-    [data-theme="dark"] .panel-left{background:radial-gradient(1200px 600px at -30% 10%, #6a0f12 30%, #4a0b0d 31%),radial-gradient(800px 400px at 120% 120%, #6a0f12 20%, #4a0b0d 21%)}
-
-    /* grid of extras */
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
-    .card{background:var(--card);border-radius:18px;padding:16px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-    .card h3{margin:0 0 6px}
-    .badge2{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(0,0,0,.08);font-size:12px;font-weight:700}
-
-    /* About / Contact */
-    .section{max-width:1080px;margin:32px auto 0;padding:0 24px}
-    .section h2{margin:0 0 10px}
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .contact form{display:grid;gap:10px}
-    input,textarea{font:inherit;padding:10px 12px;border-radius:12px;border:2px solid rgba(0,0,0,.15);background:#fff}
-    textarea{min-height:110px;resize:vertical}
-
-    /* print to pdf */
-    @media print{
-      .hero,.topbar,.chip,.badge,.section,footer{display:none !important}
-      .wrap{max-width:none;padding:0}
-      .stripe{box-shadow:none;border-radius:0}
-    }
-
-    @media (max-width:900px){.gride>
-    /* === additions === */
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:14px}
-    .nav{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{appearance:none;border:0;background:#000;color:#fff;padding:10px 14px;border-radius:999px;font-weight:700;cursor:pointer;box-shadow:0 6px 12px rgba(0,0,0,.2)}
-    .btn.outline{background:transparent;color:#000;border:2px solid #000}
-    .btn.small{padding:6px 10px;font-size:14px}
-
-    /* dark mode */
-    [data-theme="dark"]{--yellow:#17140a;--card:#2a2614;--text:#f4f1e8}
-    [data-theme="dark"] body{background:var(--yellow)}
-    [data-theme="dark"] .chip{background:#fff;color:#000}
-    [data-theme="dark"] .panel-right{background:linear-gradient(180deg,#2b2506,#3b3207)}
-    [data-theme="dark"] .panel-left{background:radial-gradient(1200px 600px at -30% 10%, #6a0f12 30%, #4a0b0d 31%),radial-gradient(800px 400px at 120% 120%, #6a0f12 20%, #4a0b0d 21%)}
-
-    /* grid of extras */
-    .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:18px}
-    .card{background:var(--card);border-radius:18px;padding:16px;box-shadow:0 8px 20px rgba(0,0,0,.15)}
-    .card h3{margin:0 0 6px}
-    .badge2{display:inline-block;padding:4px 8px;border-radius:999px;background:rgba(0,0,0,.08);font-size:12px;font-weight:700}
-
-    /* About / Contact */
-    .section{max-width:1080px;margin:32px auto 0;padding:0 24px}
-    .section h2{margin:0 0 10px}
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .contact form{display:grid;gap:10px}
-    input,textarea{font:inherit;padding:10px 12px;border-radius:12px;border:2px solid rgba(0,0,0,.15);background:#fff}
-    textarea{min-height:110px;resize:vertical}
-
-    /* print to pdf */
-    @media print{
-      .hero,.topbar,.chip,.badge,.section,footer{display:none !important}
-      .wrap{max-width:none;padding:0}
-      .stripe{box-shadow:none;border-radius:0}
-    }
-
-    @media (max-width:900px){.grid{grid-template-columns:1fr 1fr}.contact{grid-template-columns:1fr}}
-    @media (max-width:600px){.grid{grid-template-columns:1fr}}
-  </style>
-</head>
-<body>
-  <div class="wrap">
-    <div class="topbar">
-      <div class="hero">
-        <div class="image"><img src="log.png" alt=""></div>
-        <div class="titlebox">
-          <h1>THE EG ZONE</h1>
-          <small>More than a place, it's a lifestyle</small>
-        </div>
+    <title>THE EG ZONE</title>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header__logo">
+        <img
+          src="img_and_logo/logo.png"
+          alt="Logo THE EG ZONE"
+          class="logo__img"
+        />
+        <h1 class="logo__title">
+          THE EG <span class="logo__highlight">ZONE</span>
+        </h1>
       </div>
-    </div>
 
-    
-      <!-- LEFT: MENU LIST -->
-      <section class="panel-left">
-        <h2 class="menu-heading">Menu</h2>
-        <div class="list">
-          <article class="item">
-            <div class="row"><span class="name">Samoussa</span><span class="dots"></span><span class="price">2000 FC</span></div>
-            <p class="desc">Petits triangles croustillants garnis de viande, légumes ou poisson, alliant gourmandise et parfum d'épices.</p>
-          </article>
-          <article class="item">
-            <div class="row"><span class="name">Yaourt</span><span class="dots"></span><span class="price">1500 FC</span></div>
-            <p class="desc">Onctueux et savoureux, à déguster nature ou aromatisé, pour une touche de douceur et de fraîcheur.</p>
-          </article>
-          <article class="item">
-            <div class="row"><span class="name">Galettes</span><span class="dots"></span><span class="price">1500 FC</span></div>
-            <p class="desc">Pâtisseries dorées et croustillantes à l'extérieur, moelleuses à l'intérieur, parfaites pour un encas ou un dessert.</p>
-          </article>
-          <article class="item">
-            <div class="row"><span class="name">Bissap</span><span class="dots"></span><span class="price">1000 FC</span></div>
-            <p class="desc">Boisson rafraîchissante à base de fleurs d'hibiscus, couleur rouge intense et goût agréablement acidulé.</p>
-          </article>
+      <div class="hamburger" id="hamburger">☰</div>
+
+      <nav class="header__nav" id="header__nav">
+        <ul class="nav__list">
+          <li class="nav__item"><a href="#" class="nav__link">Accueil</a></li>
+          <li class="nav__item"><a href="#" class="nav__link">À propos</a></li>
+          <li class="nav__item">
+            <a href="menu.html" class="nav__link">Catalogue</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="header__cta">
+        <a href="#" class="btn btn--primary">Commander</a>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="main">
+      <!-- SECTION 1 -->
+      <section class="section section--hero">
+        <div class="hero__container">
+          <div class="hero__text">
+            <h1 class="hero__title">Des repas de qualité livrés chez vous</h1>
+            <p class="hero__description">
+              THE EG ZONE, c’est la garantie de plats frais et savoureux,
+              préparés avec soin et livrés rapidement à votre porte. Découvrez
+              une nouvelle façon de manger sain et pratique au quotidien.
+            </p>
+            <div class="hero__actions">
+              <a href="menu.html" class="btn btn--secondary">Voir le menu</a>
+            </div>
+          </div>
+          <div class="hero__image">
+            <img src="img_and_logo/samoussa.png" alt="Food delivery" />
+          </div>
         </div>
       </section>
 
-  
-        <div class="chip" title="Emplacement">
-          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7Zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5Z"></path></svg>
-          À l'esplanade du Palais du Peuple
-    </div>
-      </aside>
-    </div>
+      <!-- SECTION 2 -->
+      <section class="section section--hero2">
+        <div class="hero__container">
+          <div class="img-yaourt">
+            <img src="img_and_logo/yahour.png" alt="Yaourt frais" />
+          </div>
+          <div class="hero__text">
+            <h1 class="hero__title">Des produits locaux et frais</h1>
+            <p class="hero__description">
+              Nous travaillons avec des producteurs locaux pour vous offrir des
+              yaourts, jus et spécialités préparés à partir d’ingrédients
+              naturels et de qualité. Parce qu’une bonne alimentation commence
+              par de bons produits.
+            </p>
+            <div class="hero__actions">
+              <a href="menu.html" class="btn btn--secondary">Découvrir plus</a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-    <footpan id="y"></span> THE EG ZONE</div>
-      <div>Design web par <strong>Grand Michee</strong></div>
+      <!-- SECTION 3 -->
+      <section class="section section--testimonials">
+        <div class="testimonials__header">
+          <h1 class="testimonials__title">Ils nous font confiance</h1>
+        </div>
+
+        <div class="container-section3">
+          <div class="testimonials__container">
+            <!-- IMAGE CLIENT -->
+            <div class="testimonials__image">
+              <img src="img_and_logo/bissap.png" alt="Happy customer" />
+            </div>
+
+            <!-- TEXTE TEMOIGNAGE -->
+            <div class="testimonials__content">
+              <div class="testimonial__profile">
+                <div class="profile__image">
+                  <img src="img_and_logo/clt1.png" alt="Andrew Banks" />
+                </div>
+                <div class="profile__info">
+                  <h2 class="profile__name">Andrew Banks</h2>
+                  <p class="profile__role">Chef cuisinier</p>
+                </div>
+              </div>
+
+              <p class="testimonial__text">
+                "THE EG ZONE a révolutionné mes repas quotidiens. Des produits
+                frais, un service rapide et surtout des saveurs uniques que je
+                recommande à tous !"
+              </p>
+            </div>
+          </div>
+
+          <div class="testimonials__container">
+            <!-- IMAGE CLIENT -->
+            <div class="testimonials__image">
+              <img src="img_and_logo/bissap.png" alt="Happy customer" />
+            </div>
+
+            <!-- TEXTE TEMOIGNAGE -->
+            <div class="testimonials__content">
+              <div class="testimonial__profile">
+                <div class="profile__image">
+                  <img src="img_and_logo/clt2.png" alt="Maria Gomez" />
+                </div>
+                <div class="profile__info">
+                  <h2 class="profile__name">Maria Gomez</h2>
+                  <p class="profile__role">Cliente fidèle</p>
+                </div>
+              </div>
+
+              <p class="testimonial__text">
+                "Un service irréprochable ! J’adore leurs jus et snacks. Toujours
+                livrés à l’heure et avec un sourire. Merci à l’équipe de THE EG
+                ZONE."
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="div">
+        <div class="footer-container">
+          <div class="footer-section" id="about">
+            <div class="logo-container">
+              <img
+                src="img_and_logo/logo.png"
+                alt="Logo THE EG ZONE"
+                class="footer-logo"
+              />
+              <h1 class="footer-title">
+                THE EG <span class="highlight">ZONE</span>
+              </h1>
+            </div>
+            <p class="footer-description">
+              THE EG ZONE est une plateforme de restauration et de livraison
+              innovante, dédiée à offrir des repas de qualité, sains et adaptés
+              à tous les goûts. Plus qu’un service, nous créons une expérience
+              gourmande.
+            </p>
+            <div class="social-links">
+              <a href="#" class="social-icon"><i class="fab fa-facebook"></i></a>
+              <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+              <a href="#" target="_blank" class="social-icon"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="tel:+243123456789" class="social-icon"
+                ><i class="fas fa-phone"></i
+              ></a>
+            </div>
+          </div>
+
+          <div class="footer-section2" id="quick-links">
+            <h1 class="section-title">Liens rapides</h1>
+            <hr class="divider" />
+            <ul class="links-list">
+              <li><a href="index.html" class="footer-link">Accueil</a></li>
+              <li><a href="apropos.html" class="footer-link">À propos</a></li>
+              <li><a href="menu.html" class="footer-link">Catalogue</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section3" id="contact-info">
+            <h1 class="section-title">Contact</h1>
+            <hr class="divider" />
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt contact-icon"></i>
+              <p>123 Rue Kima, 22882 Kinshasa</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-phone contact-icon"></i>
+              <p>+243 123 456 789</p>
+            </div>
+            <div class="contact-item">
+              <i class="fas fa-envelope contact-icon"></i>
+              <p>contact@theegzone.cd</p>
+            </div>
+          </div>
+        </div>
+
+        <hr class="footer-divider" />
+        <div class="footer-bottom">
+          <p class="copyright">
+            &copy; 2024 ghostrider635. Tous droits réservés.
+          </p>
+          <div class="legal-links">
+            <a href="#" class="legal-link">Politique de confidentialité</a>
+            <a href="#" class="legal-link">Conditions d'utilisation</a>
+            <a href="#" class="legal-link">Mentions légales</a>
+          </div>
+        </div>
+      </div>
     </footer>
-  </div>
-
+  </body>
+  <script src="script.js"></script>
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    const hamburger = document.getElementById("hamburger");
+    const nav = document.getElementById("header__nav");
+
+    hamburger.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
   </script>
-</body>
 </html>
